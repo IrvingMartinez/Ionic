@@ -1,27 +1,26 @@
-<ion-view view-title="ListWeather">
+
+<ion-view view-title="Clima">
   <ion-content>
 
     <div class="list">
 <label class="item item-input item-select">
    <div class="input-label">
-    Elije Cuidad y Grados
+    Elije Grados
    </div>
    <select ng-model="mySelect" ng-change="showSelectValue(mySelect)">
-     <option selected>Elije los grados</option>
-     <option>Celsius</option>
+     <option selected>Celsius</option>
      <option>Fahrenheit</option>
      <option>Kelvin</option>
    </select>
 
- <!--  <select ng-model="mySelect2" ng-change="showSelectValue2(mySelect2)">
-     <option selected>Elije la cuidad</option>
-     <option>Mexico</option>
-     <option>Merida</option>
-     <option>Benito Juarez</option>
-   </select>-->
- </label>
-</div>
 
+  </label>
+  <div class="list list-inset">
+    <label class="item item-input">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input type="text" placeholder="Cuidad" name="actual" ng-model="actual.cuidad" ng-change="changeCity()">
+    </label>
+  </div>
 
     <ion-list>
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.dt}}">

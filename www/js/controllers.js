@@ -11,25 +11,37 @@ angular.module('starter.controllers', [])
   //$scope.$on('$ionicView.enter', function(e) {
   //});s
   $scope.showSelectValue = function(mySelect) {
+      if($scope.cuidad==null){
     if(mySelect=="Celsius"){
-      $scope.getAllData("metric");
+      $scope.getAllData("metric","cancun");
     }else if(mySelect=="Fahrenheit"){
-      $scope.getAllData("imperial");
+      $scope.getAllData("imperial","cancun");
+    }else if(mySelect=="Kelvin"){
+      $scope.getAllData("kelvin","cancun");
     }
-	else if(mySelect=="Kelvin"){
-      $scope.getAllData("kelvin");
+  } else{
+    if(mySelect=="Celsius"){
+      $scope.getAllData("metric",$scope.actual.cuidad);
+    }else if(mySelect=="Fahrenheit"){
+      $scope.getAllData("imperial",$scope.actual.cuidad);
+    }else if(mySelect=="Kelvin"){
+      $scope.getAllData("kelvin",$scope.actual.cuidad);
     }
-
   }
-$scope.getAllData=function(units){
-    chats = Chats.all(units);
+}
+  $scope.actual = {}
+  $scope.changeCity = function(){
+      $scope.getAllData("metric",$scope.actual.cuidad);
+  }
+$scope.getAllData=function(units,city){
+    chats = Chats.all(units,city);
     chats.then(function(resp){
       Chats.chats=resp.data.list;
       $scope.chats = Chats.chats;
     });
 };
 
-$scope.getAllData("metric");
+$scope.getAllData("metric","cancun");
 
   $scope.remove = function(chat) {
     Chats.remove(chat);

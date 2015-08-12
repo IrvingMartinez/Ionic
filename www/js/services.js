@@ -8,8 +8,8 @@ angular.module('starter.services', [])
 
   a= {
     chats:{},
-    all: function(units) {
-      return $http.get("http://api.openweathermap.org/data/2.5/forecast/daily?cnt=7&id=3531673&APPID=143ffc47ae963adf95c8e2a4ccf660e3&units="+units+"&lang=es");
+    all: function(units,city) {
+      return $http.get("http://api.openweathermap.org/data/2.5/forecast/daily?q="+city+"cnt=7&id=3531673&APPID=143ffc47ae963adf95c8e2a4ccf660e3&units="+units+"&lang=es");
     },
     remove: function(chat) {
       chats.splice(chats.indexOf(chat), 1);
