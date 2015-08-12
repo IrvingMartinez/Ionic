@@ -1,0 +1,15 @@
+<ion-view view-title="City" >
+  <ion-content>
+    <ion-list>
+    <ion-toggle  ng-model="settings.enableFriends">
+        Enable City
+    </ion-toggle>
+	<ion-radio ng-click="getAllData('metric')">Cancún</ion-radio>
+	<ion-radio ng-click="getAllData('imperial')">Mérida</ion-radio>
+	<ion-radio ng-click="getAllData('')">México</ion-radio>
+	<ion-radio ng-click="getAllData('')">Oaxaca</ion-radio>
+	<ion-radio ng-click="getAllData('')">Monterrey</ion-radio>
+
+    </ion-list>
+  </ion-content>
+</ion-view>

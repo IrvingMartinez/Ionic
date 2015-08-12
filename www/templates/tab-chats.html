@@ -1,0 +1,39 @@
+<ion-view view-title="ListWeather">
+  <ion-content>
+
+    <div class="list">
+<label class="item item-input item-select">
+   <div class="input-label">
+    Elije Cuidad y Grados
+   </div>
+   <select ng-model="mySelect" ng-change="showSelectValue(mySelect)">
+     <option selected>Elije los grados</option>
+     <option>Celsius</option>
+     <option>Fahrenheit</option>
+     <option>Kelvin</option>
+   </select>
+
+ <!--  <select ng-model="mySelect2" ng-change="showSelectValue2(mySelect2)">
+     <option selected>Elije la cuidad</option>
+     <option>Mexico</option>
+     <option>Merida</option>
+     <option>Benito Juarez</option>
+   </select>-->
+ </label>
+</div>
+
+
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.dt}}">
+        <img ng-src="http://openweathermap.org/img/w/{{chat.weather[0].icon}}.png">
+        <h2>{{chat.dt*1000 | date:fullDate}}</h2>
+        <p>{{chat.temp.min}}°/{{chat.temp.max}}°</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
