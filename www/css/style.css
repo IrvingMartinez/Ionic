@@ -1,0 +1,19 @@
+/* Empty. Add your own CSS if you like */
+
+.bar.bar-balanced {
+
+border-color: rgba(50, 102, 205, 1);
+background-color: rgba(50, 102, 205, 1);
+
+}
+
+.toggle input:checked + .track {
+
+	border-color : rgba(50, 102, 205, 1);
+	background-color: rgba(50, 102, 205, 1);
+}
+
+.item {
+
+border-color: rgba(50, 102, 205, 1);
+}
